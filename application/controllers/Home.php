@@ -6,6 +6,4 @@ class Home extends Main_Controller {
 	{
 		$this->view('view_home');
     }
-    
-    
 }
