@@ -1,0 +1,51 @@
+body{
+  /* background-color: #292c30!important; */
+  background-image: url('../images/neu_fair_image.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.home-container{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card{
+  background-image: linear-gradient(to bottom right, #FF6633 , yellow);
+  border: none;
+}
+
+.add-btn{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  border-radius: 50%;
+  width: 50px;
+  height:50px;
+}
+
+.done{
+  background-color: green;
+  color:white;
+}
+
+.number{
+  background-color: orange;
+  border-radius: 50%;
+  width:50px;
+  height:50px;
+}
+
+.triangle {
+	width: 0;
+  height:100% !important;
+	border-top: 50px solid transparent;
+	border-right: 20px solid #555;
+
+}
+
+.sum-text{
+  position: absolute;
+  color:white;
+  top:50%;
+  display:inline-block;
+}
