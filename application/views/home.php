@@ -61,6 +61,7 @@
               <label for="second-select" class="col-sm-3 col-form-label text-center">2nd Place</label>
               <div class="col-sm-9">
                 <select class="form-control" id="second-select">
+                  <option data-id="0">None</option>
                   <?php foreach($college_names as $college_name):?>
                     <option data-id="<?php echo $college_name->college_id;?>"><?php echo $college_name->college_name;?></option>
                   <?php endforeach?>
@@ -71,6 +72,7 @@
               <label for="third-select" class="col-sm-3 col-form-label text-center">3rd Place</label>
               <div class="col-sm-9">
                 <select class="form-control" id="third-select">
+                  <option data-id="0">None</option>
                   <?php foreach($college_names as $college_name):?>
                     <option data-id="<?php echo $college_name->college_id;?>"><?php echo $college_name->college_name;?></option>
                   <?php endforeach?>

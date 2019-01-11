@@ -44,38 +44,51 @@ class Home extends Main_Controller {
 			'event_points' => $event->first_points,
 			'event_id' => $event_id
 		);
-
-		$second_points = 0;
-		if($second == $first) {
-			$second_points = $event->second_points / 2;
-		} else if ($second != $first) {
-			$second_points = $event->second_points;
-		}
-		$second_data = array(
-			'event_winner' => $second,
-			'event_place' => '2',
-			'event_points' => $second_points,
-			'event_id' => $event_id
-		);
-
-		$third_points = 0;
-		if($third == $first || $third == $second){
-			$third_points = $event->third_points / 2;
-		} else if ($third != $first || $third != $second){
-			$third_points = $event->third_points;
-		}
-		$third_data = array(
-			'event_winner' => $third,
-			'event_place' => '3',
-			'event_points' =>$third_points,
-			'event_id' => $event_id
-		);
-
 		$result = $this->College_Model->add_event_place($first_data);
-		$result = $this->College_Model->add_event_place($second_data);
-		$result = $this->College_Model->add_event_place($third_data);
+
+
+		if($second!="0") {
+			$second_points = 0;
+			if($second == $first) {
+				$second_points = $event->second_points / 2;
+			} else if ($second != $first) {
+				$second_points = $event->second_points;
+			}
+			$second_data = array(
+				'event_winner' => $second,
+				'event_place' => '2',
+				'event_points' => $second_points,
+				'event_id' => $event_id
+			);
+			$result = $this->College_Model->add_event_place($second_data);
+		}
+		if($third!="0"){
+			$third_points = 0;
+			if($third == $first || $third == $second){
+				$third_points = $event->third_points / 2;
+			} else if ($third != $first || $third != $second){
+				$third_points = $event->third_points;
+			}
+			$third_data = array(
+				'event_winner' => $third,
+				'event_place' => '3',
+				'event_points' =>$third_points,
+				'event_id' => $event_id
+			);
+			$result = $this->College_Model->add_event_place($third_data);
+		}
+
+
+
+
 		$result = $this->College_Model->set_event_done($event_id);
 
 		echo json_encode(array('result'=>$result));
+	}
+
+	function console_log( $data ){
+	  echo '<script>';
+	  echo 'console.log('. json_encode( $data ) .')';
+	  echo '</script>';
 	}
 }

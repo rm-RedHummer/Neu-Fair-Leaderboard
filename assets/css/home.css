@@ -10,7 +10,7 @@ body{
 }
 
 .card{
-  background-image: linear-gradient(to bottom right, #FF6633 , yellow);
+  background-image: linear-gradient(to bottom right,#FF9900  , #FFFF66);
   border: none;
 }
 
